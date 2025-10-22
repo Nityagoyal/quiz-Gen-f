@@ -34,8 +34,8 @@ const Login = () => {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full text-center">
         <div className="mb-6">
-          <h1 className="text-4xl font-bold mb-2 text-gray-800">⚛️ Quantum Coin Flip</h1>
-          <p className="text-gray-600">Experience true quantum randomness with privacy logging</p>
+          <h1 className="text-4xl font-bold mb-2 text-gray-800">⚛️ quizeee</h1>
+          <p className="text-gray-600">Experience true quiz generation randomness with privacy logging</p>
         </div>
         
         <div className="mb-6">
