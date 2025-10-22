@@ -30,8 +30,7 @@ const Home = () => {
 
     try {
       // NOTE: Update the URL to your actual backend if deployed
-      const res = await axios.post(
-        "http://localhost:7653/api/quiz/generateQuiz",
+      const res = await axios.post(`${API_BASE}/api/quiz/generateQuiz`,
         { Topic: topic, countof: numQuestions },
         { withCredentials: true }
       );
