@@ -8,7 +8,7 @@
 
 //   return (
 //     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-//       <h1 className="text-3xl font-bold mb-4">Quantum Coin Flip</h1>
+//       <h1 className="text-3xl font-bold mb-4">Quizeee</h1>
 //       <button
 //         onClick={handleGoogleLogin}
 //         className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
@@ -60,8 +60,8 @@ const Login = () => {
         </button>
 
         <div className="mt-6 text-xs text-gray-500">
-          <p>By signing in, you agree to our privacy-preserving data practices</p>
-          <p>Your quantum flip data is pseudonymized and protected</p>
+          <p>By signing in, you agree to our secure data practices</p>
+<p>Your quiz activity and results are safely protected</p>
         </div>
       </div>
     </div>
