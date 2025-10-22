@@ -1,0 +1,281 @@
+/* Import a common pixel font if available. Google Fonts: "Press Start 2P" */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* --- Global & Base Styles --- */
+
+body {
+    background-color: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* Use a pixelated font if linked, fallback to monospace for the look */
+    font-family: 'Press Start 2P', monospace; 
+    image-rendering: pixelated; 
+    overflow: auto; 
+    color: #333; /* Default text color */
+}
+
+.game-screen-container {
+    padding: 20px;
+}
+
+.game-screen {
+    width: 100;
+    max-width: 1500px;   /* increased from 800px → wider */
+    min-height: 700px;   /* increased from 600px → taller */
+    padding: 50px 25px 30px;  /* more internal spacing */
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #7fcaf3 0%, #a4e1f7 100%);
+    position: relative;
+    border: 4px solid #000;
+    box-shadow: 0 0 0 8px #555 inset;
+    border-radius: 6px; /* optional subtle rounding */
+}
+/* --- Platform Layer --- */
+/* --- Platform Layer (Ground) --- */
+.platform-layer {
+  position: absolute;
+  bottom: -4px; /* move below border so it aligns perfectly with box edge */
+  left: 0;
+  width: 100%;
+  height: 140px; /* thicker ground for proportionate look */
+  background-image: url("/game/platform.png");
+  background-repeat: repeat-x;
+  background-size: cover; /* fills horizontally */
+  background-position: bottom;
+  z-index: 3;
+}
+/* --- Cloud Layer (Moving Background) --- */
+.cloud-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/game/clouds.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  animation: moveClouds 40s linear infinite;
+}
+
+@keyframes moveClouds {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); } /* move less, stays visible */
+}
+
+
+
+
+/* --- Title Styling --- */
+
+.title {
+    font-size: 30px;
+    color: #ffcc00; 
+    text-align: center;
+    margin: 0 0 40px;
+    line-height: 1;
+    /* Pixel shadow effect */
+    text-shadow: 
+        4px 4px 0 #000, 
+        0 8px 0 #20a0a0; 
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #333;
+    text-shadow: 2px 2px 0 #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- Hearts/Status --- */
+.hearts-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.heart {
+    font-size: 24px;
+    margin: 0 4px;
+}
+
+.question-counter {
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* --- Inputs & Buttons (Pixel Style) --- */
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.pixel-input {
+    font-family: inherit;
+    padding: 8px;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    /* Pixel border effect */
+    box-shadow: 
+        4px 4px 0 #000, 
+        -4px -4px 0 #ccc inset; 
+    border-radius: 0; /* Remove default rounding */
+    outline: none;
+}
+
+.pixel-input.num-input {
+    width: 80px;
+    text-align: center;
+}
+
+.pixel-button {
+    font-family: inherit;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1;
+    font-size: 16px;
+    color: #000;
+    
+    /* Base Pixel Button Shadow */
+    box-shadow: 
+        4px 4px 0 #000, /* Drop shadow/border bottom-right */
+        -4px -4px 0 #fff inset, /* Highlight top-left */
+        4px 4px 0 #000 inset; /* Dark shadow bottom-right inset */
+
+    transition: all 0.05s ease;
+}
+
+/* --- Specific Button Styles --- */
+
+.start-button {
+    background-color: #ffcc00; /* Yellow */
+}
+
+.next-button {
+    background-color: #4CAF50; /* Green */
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+.restart-button {
+    background-color: #e91e63; /* Pink/Red */
+}
+
+.pixel-button:hover {
+    filter: brightness(1.1);
+}
+
+.pixel-button:active {
+    /* Press Down Effect */
+    transform: translate(2px, 2px);
+    box-shadow: 
+        2px 2px 0 #000, 
+        -2px -2px 0 #fff inset, 
+        2px 2px 0 #000 inset;
+}
+
+
+/* --- Quiz Content & Options --- */
+
+.question-text {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 #000;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.options-container {
+    display: grid;
+    gap: 10px;
+}
+
+.option-button {
+    font-family: inherit;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    background-color: #e0e0e0;
+    
+    /* Option button pixel style */
+    box-shadow: 3px 3px 0 #666; /* Gray shadow */
+    transition: background-color 0.1s;
+}
+
+.option-button:hover:not(:disabled) {
+    background-color: #ffffff;
+}
+
+.option-button:disabled {
+    cursor: not-allowed;
+}
+
+/* --- Answer Feedback Colors --- */
+
+.option-button.correct-answer {
+    background-color: #b4f8c8 !important; /* Light Green */
+    box-shadow: 3px 3px 0 #28a745; 
+}
+
+.option-button.incorrect-answer {
+    background-color: #ffb3b3 !important; /* Light Red */
+    box-shadow: 3px 3px 0 #dc3545;
+}
+
+/* Revealed correct answer after incorrect selection */
+.option-button.revealed-correct:not(.correct-answer) {
+     background-color: #ffeb3b !important; /* Highlight correct answer in yellow */
+     box-shadow: 3px 3px 0 #ffc107;
+}
+
+/* --- Score Screen --- */
+
+.score-screen {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f8ff; /* Light, blocky screen */
+    border: 4px solid #000;
+    box-shadow: 6px 6px 0 #000;
+    margin-top: 50px;
+}
+
+.score-text {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #000;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+.error-text {
+    color: #dc3545;
+    background-color: #fff;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid #dc3545;
+    margin-bottom: 15px;
+    font-size: 14px;
+}

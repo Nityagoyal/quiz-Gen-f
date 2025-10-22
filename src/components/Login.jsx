@@ -27,7 +27,7 @@ import config from '../Config';
 
 const Login = () => {
   const handleGoogleLogin = () => {
-    window.location.href = `${config.API_BASE_URL}/auth/google`; // production-ready endpoint
+    window.location.href = `${config.API_BASE_URL}/api/auth/google`; // production-ready endpoint
   };
 
   return (
