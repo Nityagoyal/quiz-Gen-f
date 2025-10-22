@@ -13,7 +13,7 @@ const Home = () => {
   const [isCorrect, setIsCorrect] = useState(null);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
-
+ const API_BASE = "https://quiz-gen-e0ql.onrender.com";
   const handleGenerateQuiz = async () => {
     if (!topic) {
       setError("Please enter a topic");
