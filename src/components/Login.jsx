@@ -40,9 +40,9 @@ const Login = () => {
         
         <div className="mb-6">
           <div className="text-sm text-gray-500 mb-4">
-            <p>🔬 Real quantum computing with Qiskit</p>
-            <p>🔒 Privacy-preserving data logging</p>
-            <p>🤖 Autonomous agent capabilities</p>
+           <p>🧠 Generate smart quizzes in seconds</p>
+           <p>📊 Personalized questions using AI</p>
+            <p>🎯 Designed for learners and educators alike</p>
           </div>
         </div>
 
