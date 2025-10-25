@@ -40,7 +40,7 @@ body {
   bottom: -4px; /* move below border so it aligns perfectly with box edge */
   left: 0;
   width: 100%;
-  height: 100px; /* thicker ground for proportionate look */
+  height: 70px; /* thicker ground for proportionate look */
   background-image: url("/game/platform.png");
   background-repeat: repeat-x;
   background-size: cover; /* fills horizontally */
@@ -279,3 +279,12 @@ body {
     margin-bottom: 15px;
     font-size: 14px;
 }
+.pixel-button,
+.input-section,
+.question-text,
+.options-container,
+.score-screen {
+  position: relative;
+  z-index: 10; /* Above clouds + platform */
+}
+
